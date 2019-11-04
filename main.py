@@ -1,32 +1,38 @@
 
-def WrdPerf(word,pos):
-    CritFilled = 0
-    if pos:
+
+##WrdPerf returns True if the word is ambiguous (==Satisfies at least one criterion), False otherwise.
+##SentPerf returns a list of True and False, evalutaing WrdPerf on each word.
+##Eval compares SentPerf and the actual, provided evaluation, returning the percentage of successfull evaluations.
+
+def WrdPerf(word,isStart): 
+    CritFilled = 0 ##criterions for ambiguous words
+    if isStart: ##word is in head of sentence
+        CritFilled += 1 
+    if len(word) <= 4: ##word is four letters or less
         CritFilled += 1
-    if len(word) <= 4:
-        CritFilled += 1
-    if word[-1:-2] == "ים" or word[-1:-2] == "ות":
+    if word[-1:-2] == "ים" or word[-1:-2] == "ות": ##word ends in "ים" or "ות"
         CritFilled += 1
     if word[0] == "ב" or word[0] == "כ" or word[0] == "ל" or word[0] =="מ":
-        CritFilled += 1
-    IsAmb = CritFilled != 0
+        CritFilled += 1 ##word begins with "ב" "כ" "ל" "ם"
+    IsAmb = CritFilled != 0 ##One criterion filled is enough (???)
     return IsAmb
 
 def SentPerf(sentence):
-    AreAmb = []
-    SplitSentence = sentence.split(" ")
+    AreAmb = [] ##True/False list for the sentence
+    SplitSentence = sentence.split(" ") ##turns the sentence to a list
     for word in SplitSentence:
-        pos = word == SplitSentence[0]
-        AreAmb.append(WrdPerf(word,pos))
+        IsStart = word == SplitSentence[0] ##checks if the word is in head of sentence
+        AreAmb.append(WrdPerf(word,IsStart)) ##check if word is ambiguous, and add the result to AreAmb
     return AreAmb
 
 def Eval(sentence,RealSentPerf):
-    SuccessfullEvals = 0
-    SentencePerformance = SentPerf(sentence)
-    for Eval in SentencePerformance:
-        if Eval == RealSentPerf[SentencePerformance.index(Eval)]:
-            SuccessfullEvals += 1
-    return SuccessfullEvals/len(sentence)*100
+    SuccessfullEvals = 0 ##number of successes
+    SentencePerformance = SentPerf(sentence) ##True/False list for the sentence
+    for i in range(len(SentencePerformance)): ##at every index...
+        if SentencePerformance[i] == RealSentPerf[i]: ##...compare the evaluation and the actual evaluation
+            SuccessfullEvals += 1 ##if success - increment SuccessfullEvals
+    return 100*SuccessfullEvals/len(SentencePerformance) 
 
-ExSentence = "ששש"
-print (SentPerf(ExSentence))
+EXsentence = "בעיני רבים ההגדרה של החופשה המושלמת היא בטן גב ברצועת חוף אקזוטית"
+EXRealSentencePerf = [True,True,False,True,False,True,True,False,False,False,False,False]
+print (Eval(EXsentence, EXRealSentencePerf))
