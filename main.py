@@ -33,6 +33,8 @@ def Eval(sentence,RealSentPerf):
             SuccessfullEvals += 1 ##if success - increment SuccessfullEvals
     return 100*SuccessfullEvals/len(SentencePerformance) 
 
-EXsentence = "בעיני רבים ההגדרה של החופשה המושלמת היא בטן גב ברצועת חוף אקזוטית"
-EXRealSentencePerf = [True,True,False,True,False,True,True,False,False,False,False,False]
-print (Eval(EXsentence, EXRealSentencePerf))
+EXsentence1 = "בעיני רבים ההגדרה של החופשה המושלמת היא בטן גב ברצועת חוף אקזוטית"
+EXRealSentencePerf1 = [True,True,False,True,False,True,True,False,False,False,False,False]
+EXsentence2 = "המרכיבים ההכרחיים הם חול בין אצבעות הרגליים שמש מלטפת המיית הגלים ואוויר של ים"
+EXRealSentencePerf2 = [True,False,True,True,True,False,True,True,False,False,False,False,True,False]
+print (Eval(EXsentence1, EXRealSentencePerf1), Eval(EXsentence2, EXRealSentencePerf2))
