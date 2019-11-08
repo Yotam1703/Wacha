@@ -3,8 +3,9 @@
 ##Eval compares SentPerf and the actual, provided evaluation, returning the percentage of successfull evaluations.
 
 ###TODO: בכלמ seprately, ו, ש, combinations ("ומ..."), different lens, place, XXX letter is in word
-###TODO: (excel sheet of AmbLetters composition vs. HebLetters),  ים/ות seperately, י ending, 
-###TODO: longer corpus!!, automation!!, 
+###TODO: (excel sheet of AmbLetters composition vs. HebLetters),  ים/ות seperately, י,ות ending, 
+###TODO: longer corpus!!, automation!! ONLP lib, hindsight explanations!!, grade vs. AmbCount
+###TODO: NN discussion, 
 
 def WrdPerf(word,isStart): 
     CritFilled = 0 ##criterions for ambiguous words
