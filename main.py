@@ -1,8 +1,10 @@
-
-
 ##WrdPerf returns True if the word is ambiguous (==Satisfies at least one criterion), False otherwise.
 ##SentPerf returns a list of True and False, evalutaing WrdPerf on each word.
 ##Eval compares SentPerf and the actual, provided evaluation, returning the percentage of successfull evaluations.
+
+###TODO: בכלמ seprately, ו, ש, combinations ("ומ..."), different lens, place, XXX letter is in word
+###TODO: (excel sheet of AmbLetters composition vs. HebLetters),  ים/ות seperately, י ending, 
+###TODO: longer corpus!!, automation!!, 
 
 def WrdPerf(word,isStart): 
     CritFilled = 0 ##criterions for ambiguous words
@@ -12,8 +14,10 @@ def WrdPerf(word,isStart):
         CritFilled += 1
     if word[-1:-2] == "ים" or word[-1:-2] == "ות": ##word ends in "ים" or "ות"
         CritFilled += 1
-    if word[0] == "ב" or word[0] == "כ" or word[0] == "ל" or word[0] =="מ":
-        CritFilled += 1 ##word begins with "ב" "כ" "ל" "ם"
+#    if word[0] == "ב" or word[0] == "כ" or word[0] == "ל" or word[0] =="מ":
+#        CritFilled += 1 ##word begins with "ב" "כ" "ל" "ם"
+#    if word[0] == "ה":
+#        CritFilled += 1
     IsAmb = CritFilled != 0 ##One criterion filled is enough (???)
     return IsAmb
 
@@ -37,4 +41,7 @@ EXsentence1 = "בעיני רבים ההגדרה של החופשה המושלמת
 EXRealSentencePerf1 = [True,True,False,True,False,True,True,False,False,False,False,False]
 EXsentence2 = "המרכיבים ההכרחיים הם חול בין אצבעות הרגליים שמש מלטפת המיית הגלים ואוויר של ים"
 EXRealSentencePerf2 = [True,False,True,True,True,False,True,True,False,False,False,False,True,False]
-print (Eval(EXsentence1, EXRealSentencePerf1), Eval(EXsentence2, EXRealSentencePerf2))
+
+print (SentPerf(EXsentence1))
+print (EXRealSentencePerf1)
+print (Eval(EXsentence1,EXRealSentencePerf1))
