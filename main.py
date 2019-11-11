@@ -42,7 +42,7 @@ EXsentence1 = "בעיני רבים ההגדרה של החופשה המושלמת
 EXRealSentencePerf1 = [True,True,False,True,False,True,True,False,False,False,False,False]
 EXsentence2 = "המרכיבים ההכרחיים הם חול בין אצבעות הרגליים שמש מלטפת המיית הגלים ואוויר של ים"
 EXRealSentencePerf2 = [True,False,True,True,True,False,True,True,False,False,False,False,True,False]
+EXsentence3 = "אבל מהו בעצם אוויר של ים איך הוא מקבל את הניחוח הייחודי שלו והאם בכלל כדאי לנו לדעת מה אנחנו מכניסים לריאות כשאנו לוקחים נשימה עמוקה על החוף"
+EXRealSentencePerf3 = [True,False,True,False,True,False,False,True,True,True,False,False,False,True,True,True,True,True,True,False,False,True,False,False,True,False]
 
-print (SentPerf(EXsentence1))
-print (EXRealSentencePerf1)
-print (Eval(EXsentence1,EXRealSentencePerf1))
+print ((Eval(EXsentence1,EXRealSentencePerf1)+Eval(EXsentence2,EXRealSentencePerf2)+Eval(EXsentence1,EXRealSentencePerf1))/3)
