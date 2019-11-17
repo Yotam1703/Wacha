@@ -1,6 +1,4 @@
-
-
-##WrdPerf returns True if the word is ambiguous (==Satisfies at least one criterion), False otherwise.
+#WrdPerf returns True if the word is ambiguous (==Satisfies at least one criterion), False otherwise.
 ##SentPerf returns a list of True and False, evalutaing WrdPerf on each word.
 ##Eval compares SentPerf and the actual, provided evaluation, returning the percentage of successfull evaluations.
 
@@ -9,6 +7,7 @@
 ###TODO: longer corpus!!, automation!! ONLP lib, hindsight explanations!!, grade vs. AmbCount
 ###TODO: NN discussion, 
 
+####BLOCK: functions
 def WrdPerf(word,isStart): 
     CritFilled = 0 ##criterions for ambiguous words
     if isStart: ##word is in head of sentence
@@ -42,6 +41,9 @@ def Eval(sentence,RealSentPerf):
             SuccessfullEvals += 1 ##if success - increment SuccessfullEvals
     return 100*SuccessfullEvals/len(SentencePerformance) 
 
+
+
+####BLOCK:sentences
 EXsentence1 = "בעיני רבים ההגדרה של החופשה המושלמת היא בטן גב ברצועת חוף אקזוטית"
 EXRealSentencePerf1 = [True,True,False,True,False,True,True,False,False,False,False,False]
 EXsentence2 = "המרכיבים ההכרחיים הם חול בין אצבעות הרגליים שמש מלטפת המיית הגלים ואוויר של ים"
@@ -50,6 +52,19 @@ EXsentence3 = "אבל מהו בעצם אוויר של ים איך הוא מקב�
 EXRealSentencePerf3 = [True,False,True,False,True,False,False,True,True,True,False,True,True,True,True,True,True,True,False,False,True,False,False,False,False,False,True,False]
 EXsentence4 = "כשמבקשים מאנשים לתאר את ריחו של הים התשובות הנפוצות כוללות בדרך כלל את המושגים רענן טרי מלוח או דגי בווריאציות שונות"
 EXRealSentencePerf4 = [True,False,False,True,False,True,False,False,True,False,True,True,True,True,True,False,True,False,True,False,True,]
+EXsentence5 = "ריח הים נוצר מקוקטייל של כימיקלים רבים שמקורם בריקבון מוות ופירוק חיידקי עם קורטוב של מליחות אצות ואורגניזמים ימיים"
+EXRealSentencePerf5 = [False,False,True,False,True,False,True,True,False,False,False,True,True,False,True,True,True,False,False]
 
 
-print ((Eval(EXsentence1,EXRealSentencePerf1)+Eval(EXsentence2,EXRealSentencePerf2)+Eval(EXsentence3,EXRealSentencePerf3)+Eval(EXsentence4,EXRealSentencePerf4))/4)
+####BLOCK:results
+def avg(numbers):
+    return sum(numbers)/len(numbers)
+
+Eval1 = Eval(EXsentence1,EXRealSentencePerf1)
+Eval2 = Eval(EXsentence2,EXRealSentencePerf2)
+Eval3 = Eval(EXsentence3,EXRealSentencePerf3)
+Eval4 = Eval(EXsentence4,EXRealSentencePerf4)
+Eval5 = Eval(EXsentence5,EXRealSentencePerf5)
+Evals = [Eval1,Eval2,Eval3,Eval4,Eval5]
+
+print (avg(Evals))
