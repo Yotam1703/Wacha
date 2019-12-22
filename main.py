@@ -10,32 +10,32 @@
 
 def WrdPerf(word,isStart,isEnd): 
                 CritFilled = 0
-#                if isStart: ##word is in head of sentence
- #                               CritFilled += 1
+                if isStart: ##word is in head of sentence
+                                CritFilled += 1
   #              if isEnd:
    #                             CritFilled += 1
                 if len(word) <= 4: 
                                 CritFilled += 1
-                if len(word) >= 6: 
-                                CritFilled -= 1              
-#                if word[-1:-2] == "ים": 
-#                                CritFilled += 1
+                # if len(word) >= 6: 
+                                # CritFilled -= 1              
+                if word[-1] == "ם": 
+                                CritFilled += 1
 #                if word[-1:-2] == "ות": 
 #                               CritFilled += 1
-                if word[0] == "ה":
-                               CritFilled -= 1 ##
-#                if word[0] == "ב":
- #                              CritFilled += 1
-#                if word[0] == "מ":
- #                              CritFilled -= 1
-                if word[0] == "ל":
-                               CritFilled -= 1
-                if word[0] == "כ":
-                               CritFilled += 1                                   
-#                if word[0] == "ו":
-#                               CritFilled += 1
-                if word[0] == "ש":
-                               CritFilled += 1
+                # if word[0] == "ה":
+                            #   CritFilled -= 1 ##
+                # if word[0] == "ב":
+                            #   CritFilled += 1
+                # if word[0] == "מ":
+                            #   CritFilled -= 1
+                # if word[0] == "ל":
+                            #   CritFilled -= 1
+                # if word[0] == "כ":
+                            #   CritFilled += 1                                   
+                # if word[0] == "ו":
+                            #   CritFilled += 1
+                # if word[0] == "ש":
+                            #   CritFilled += 1
 
                 IsAmb = CritFilled >= 1 ##One criterion filled is enough (???)
                 return IsAmb
@@ -57,7 +57,7 @@ def Eval(sentence,RealSentPerf):
             SuccessfullEvals += 1 
     return 100*SuccessfullEvals/len(SentencePerformance) 
 
-
+##ריח של ים
 EXsentence1 = "בעיני רבים ההגדרה של החופשה המושלמת היא בטן גב ברצועת חוף אקזוטית"
 EXRealSentencePerf1 = [True,True,False,True,False,True,True,False,False,False,False,False]
 EXsentence2 = "המרכיבים ההכרחיים הם חול בין אצבעות הרגליים שמש מלטפת המיית הגלים ואוויר של ים"
@@ -81,18 +81,19 @@ EXRealSentencePerf10 = [False,False,True,False,True,False,True,True,False,False,
 EXsentence11 = "לא נשמע רומנטי ורענן כמו רוב השירים שנכתבו על הים אבל זה מה שיש"
 EXRealSentencePerf11 = [False,True,False,True,True,True,False,False,True,False,True,False,True,False]
 EXsentence12 = "אז כדי להבין קצת יותר מאיפה מגיע הריח ומה מרכיב אותו נבחן כמה מהמולקולות היותר נפוצות שמתעופפות במשבי הבריזה"
-EXRealSentencePerf12 = [True,True,False,True,True,False,False,True,False,True,False,True,Trgue,False,False,True,False,False,True]
+EXRealSentencePerf12 = [True,True,False,True,True,False,False,True,False,True,False,True,True,False,False,True,False,False,True]
 ##MILA stopped working here
 EXsentence13 = "מדובר במולקולה קטנה אך מסריחה שריחה מתואר כדומה לזה של כרוב או אספרגוס מבושל"
-EXRealSentencePerf13 = [False,True,True,False,True,False,True,True,True,True,True,False,False,False]
+EXRealSentencePerf13 = [True,False,True,False,True,False,True,True,False,True,True,False,False,True]
 EXsentence14 = "אבל לא מדובר בחומר שריחו בהכרח דוחה אותנו"
-EXRealSentencePerf14 = [True,False,True,False,False,False,True,True]
+EXRealSentencePerf14 = [True,False,True,False,False,False,True,False]
 EXsentence15 = "בריכוזים מסוימים תוכלו למצוא אותו ביין או בירה במגוון ירקות ופירות לרבות עגבניות ומנגו והוא תורם גם לניחוח של גבינות קשות מיושנות ופטריות כמהין"
-EXRealSentencePerf15 = [False,False,False,False,True,False,False,False,True,False,False,False,True,False,False,False,True,False,False,True,False,False,
-EXsentence16 = ""
-EXRealSentencePerf16 = []
-EXsentence17 = ""
-EXRealSentencePerf17 = []
+EXRealSentencePerf15 = [False,True,False,False,True,False,False,False,True,False,False,True,True,False,False,True,False,False,True,False,True,False,False,False,]
+EXsentence16 = "טכנולוגי מזון אף משתמשים בו כדי להעניק טעמי בשר דגים ביצים חמאה פירות וירקות למוצרי מזון מעובדים"
+EXRealSentencePerf16 = [True,False,True,True,False,True,False,True,True,True,False,False,False,False,False,False,True]
+##סרטון הפלסטיק בחסה
+EXsentence17 = "בימים האחרונים סוערת הרשת הישראלית בעקבות סרטון בו מראים שבחסה שאנו אוכלים קיימת שכבת פלסטיק שניתן ממש לקלף אותה אחרי שמטביעים את החסה במים רותחים"
+EXRealSentencePerf17 = [False,False,True,True,True,True,False,False,False,False,True,True,True,True,False,False,True,False,True,False,False,True,False,False,True]
 EXsentence18 = ""
 EXRealSentencePerf18 = []
 EXsentence19 = ""
@@ -129,6 +130,13 @@ Eval11 = Eval(EXsentence11, EXRealSentencePerf11)
 Eval12 = Eval(EXsentence12, EXRealSentencePerf12)
 Eval13 = Eval(EXsentence13, EXRealSentencePerf13)
 Eval14 = Eval(EXsentence14, EXRealSentencePerf14)
-Eval = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12]
+Eval15 = Eval(EXsentence15, EXRealSentencePerf15)
+Eval16 = Eval(EXsentence16, EXRealSentencePerf16)
+Eval17 = Eval(EXsentence17, EXRealSentencePerf17)
+Eval = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12,Eval13,Eval14,Eval15,Eval16,Eval17]
 
+Lengths = [len(EXRealSentencePerf1),len(EXRealSentencePerf2),len(EXRealSentencePerf3),len(EXRealSentencePerf4),len(EXRealSentencePerf5),len(EXRealSentencePerf6),len(EXRealSentencePerf7),len(EXRealSentencePerf8),len(EXRealSentencePerf9),len(EXRealSentencePerf10),len(EXRealSentencePerf11),len(EXRealSentencePerf12),len(EXRealSentencePerf13),len(EXRealSentencePerf14),len(EXRealSentencePerf15),len(EXRealSentencePerf16),len(EXRealSentencePerf17)]
+
+print (sum(Lengths))
 print (avg(Eval))
+
