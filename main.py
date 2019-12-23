@@ -94,16 +94,16 @@ EXRealSentencePerf16 = [True,False,True,True,False,True,False,True,True,True,Fal
 ##סרטון הפלסטיק בחסה
 EXsentence17 = "בימים האחרונים סוערת הרשת הישראלית בעקבות סרטון בו מראים שבחסה שאנו אוכלים קיימת שכבת פלסטיק שניתן ממש לקלף אותה אחרי שמטביעים את החסה במים רותחים"
 EXRealSentencePerf17 = [False,False,True,True,True,True,False,False,False,False,True,True,True,True,False,False,True,False,True,False,False,True,False,False,True]
-EXsentence18 = ""
-EXRealSentencePerf18 = []
-EXsentence19 = ""
-EXRealSentencePerf19 = []
-EXsentence20 = ""
-EXRealSentencePerf20 = []
-EXsentence21 = ""
-EXRealSentencePerf21 = []
-EXsentence22 = ""
-EXRealSentencePerf22 = []
+EXsentence18 = "אולם בפוסט ויראלי שעלה בעמוד הפייסבוק סטטוסים מצייצים נראה כי כל עניין הפלסטיק בחסה יצא מפרופורציות ומדובר בסך הכל באפידרמיס שכבה שמגנה על העלה ונמצאת גם בעורם של בני האדם"
+EXRealSentencePerf18 = [True,False,False,True,False,False,False,False,True,False,False,True,False,True,False,False,True,True,False,False,True,True,True,True,False,False,False,True,False,False]
+EXsentence19 = "מצב החקלאות גם ככה בקריסה נכתתב בפוסט הסותר את טענת הפלסטיק בחסה"
+EXRealSentencePerf19 = [True,False,False,False,False,False,False,True,True,True,False,False]
+EXsentence20 = "מספיקה לנו הממשלה שדואגת לחסל לאט לאט אבל בטוח את ענף החקלאות הישראלי"
+EXRealSentencePerf20 = [True,True,False,True,False,True,True,True,True,True,True,False,True]
+EXsentence21 = "אין לנו צורך באנשים ללא כל ידע שינסו לחסל את החקלאות"
+EXRealSentencePerf21 = [True,True,True,False,False,False,True,True,False,True,False]
+EXsentence22 = "אלו אנשים שידם קלה על המקלדת אנשים שלא חושבים פעמיים מי נמצא בצד השני"
+EXRealSentencePerf22 = [True,True,True,True,True,False,False,False,False,False,True,False,False,True]
 EXsentence23 = ""
 EXRealSentencePerf23 = []
 EXsentence24 = ""
@@ -133,10 +133,19 @@ Eval14 = Eval(EXsentence14, EXRealSentencePerf14)
 Eval15 = Eval(EXsentence15, EXRealSentencePerf15)
 Eval16 = Eval(EXsentence16, EXRealSentencePerf16)
 Eval17 = Eval(EXsentence17, EXRealSentencePerf17)
-Eval = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12,Eval13,Eval14,Eval15,Eval16,Eval17]
+Eval18 = Eval(EXsentence18, EXRealSentencePerf18)
+Eval19 = Eval(EXsentence19, EXRealSentencePerf19)
+Eval20 = Eval(EXsentence20, EXRealSentencePerf20)
+Eval21 = Eval(EXsentence21, EXRealSentencePerf21)
+Eval22 = Eval(EXsentence22, EXRealSentencePerf22)
+Eval = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12,Eval13,Eval14,Eval15,Eval16,Eval17,Eval18,Eval19,Eval20,Eval21,Eval22]
 
-Lengths = [len(EXRealSentencePerf1),len(EXRealSentencePerf2),len(EXRealSentencePerf3),len(EXRealSentencePerf4),len(EXRealSentencePerf5),len(EXRealSentencePerf6),len(EXRealSentencePerf7),len(EXRealSentencePerf8),len(EXRealSentencePerf9),len(EXRealSentencePerf10),len(EXRealSentencePerf11),len(EXRealSentencePerf12),len(EXRealSentencePerf13),len(EXRealSentencePerf14),len(EXRealSentencePerf15),len(EXRealSentencePerf16),len(EXRealSentencePerf17)]
+Lengths = [len(EXRealSentencePerf1),len(EXRealSentencePerf2),len(EXRealSentencePerf3),len(EXRealSentencePerf4),
+           len(EXRealSentencePerf5),len(EXRealSentencePerf6),len(EXRealSentencePerf7),len(EXRealSentencePerf8),
+           len(EXRealSentencePerf9),len(EXRealSentencePerf10),len(EXRealSentencePerf11),len(EXRealSentencePerf12),
+           len(EXRealSentencePerf13),len(EXRealSentencePerf14),len(EXRealSentencePerf15),len(EXRealSentencePerf16),
+           len(EXRealSentencePerf17),len(EXRealSentencePerf18),len(EXRealSentencePerf19),len(EXRealSentencePerf20),
+           len(EXRealSentencePerf21),len(EXRealSentencePerf22)]
 
 print (sum(Lengths))
 print (avg(Eval))
-
