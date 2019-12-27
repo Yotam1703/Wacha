@@ -2,32 +2,33 @@
 ##SentPerf returns a list of True and False, evalutaing WrdPerf on each word.
 ##Eval compares SentPerf and the actual, provided evaluation, returning the percentage of successfull evaluations.
 
+
 def WrdPerf(word,isStart,isEnd): 
                 CritFilled = 0
                 if isStart: ##word is in head of sentence
                                 CritFilled += 1
                 # if isEnd:
                 #                 CritFilled += 1
-                if len(word) <= 4: 
-                                CritFilled += 1
+                # if len(word) <= 4: 
+                #                 CritFilled += 1
                 # if len(word) >= 6: 
-                                # CritFilled -= 1              
-#                 if word[-1] == "ם": 
-#                                 CritFilled += 1
-# #                if word[-1:-2] == "ות": 
-#                               CritFilled += 1
+                #                 CritFilled -= 1              
+                # if word.endswith("ים"): 
+                #                 CritFilled += 1
+                # if word.endswith("ות"): 
+                #                 CritFilled += 1
                 # if word[0] == "ה":
                 #               CritFilled -= 1 
-                if word[0] == "ב":
-                              CritFilled -= 1
-                if word[0] == "מ":
-                              CritFilled += 1
-                if word[0] == "ל":
-                              CritFilled -= 1
+                # if word[0] == "ב":
+                #               CritFilled -= 1
+                # if word[0] == "מ":
+                #               CritFilled += 1
+                # if word[0] == "ל":
+                #               CritFilled -= 1
                 # if word[0] == "כ":
                 #               CritFilled += 1                                   
-                if word[0] == "ו":
-                              CritFilled -= 1
+                # if word[0] == "ו":
+                #               CritFilled -= 1
                 # if word[0] == "ש":
                 #               CritFilled += 1
 
@@ -50,7 +51,6 @@ def Eval(sentence,RealSentPerf):
         if SentencePerformance[i] == RealSentPerf[i]: ##...compare the evaluation and the actual evaluation
             SuccessfullEvals += 1 
     return 100*SuccessfullEvals/len(SentencePerformance) 
-
 
 ##ריח של ים
 Sentence1 = "בעיני רבים ההגדרה של החופשה המושלמת היא בטן גב ברצועת חוף אקזוטית"
@@ -114,6 +114,9 @@ Sentence28 = "הסחר שהיקפו עומד על יותר מחמש מאות ט�
 RealSentencePerf28 = [False,False,True,False,True,True,False,False,True,False,False,True,True,False,False,True,True,True,False,True,True,True,True,False,True]
 
 
+def avg(numbers):
+    return sum(numbers)/len(numbers)
+
 Eval1 = Eval(Sentence1, RealSentencePerf1)
 Eval2 = Eval(Sentence2, RealSentencePerf2)
 Eval3 = Eval(Sentence3, RealSentencePerf3)
@@ -144,8 +147,5 @@ Eval27 = Eval(Sentence27, RealSentencePerf27)
 Eval28 = Eval(Sentence28, RealSentencePerf28)
 Eval = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12,Eval13,Eval14,Eval15,Eval16,Eval17,Eval18,Eval19,Eval20,Eval21,Eval22,Eval23,Eval24,Eval25,Eval26,Eval27,Eval28]
 
-
-def avg(numbers):
-    return sum(numbers)/len(numbers)
 
 print (avg(Eval))
