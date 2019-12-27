@@ -144,18 +144,8 @@ Eval27 = Eval(Sentence27, RealSentencePerf27)
 Eval28 = Eval(Sentence28, RealSentencePerf28)
 Eval = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12,Eval13,Eval14,Eval15,Eval16,Eval17,Eval18,Eval19,Eval20,Eval21,Eval22,Eval23,Eval24,Eval25,Eval26,Eval27,Eval28]
 
-Lengths = [len(RealSentencePerf1),len(RealSentencePerf2),len(RealSentencePerf3),len(RealSentencePerf4),
-           len(RealSentencePerf5),len(RealSentencePerf6),len(RealSentencePerf7),len(RealSentencePerf8),
-           len(RealSentencePerf9),len(RealSentencePerf10),len(RealSentencePerf11),len(RealSentencePerf12),
-           len(RealSentencePerf13),len(RealSentencePerf14),len(RealSentencePerf15),len(RealSentencePerf16),
-           len(RealSentencePerf17),len(RealSentencePerf18),len(RealSentencePerf19),len(RealSentencePerf20),
-           len(RealSentencePerf21),len(RealSentencePerf22),len(RealSentencePerf23),len(RealSentencePerf24),
-           len(RealSentencePerf25),len(RealSentencePerf26),len(RealSentencePerf27),len(RealSentencePerf28)]
-
 
 def avg(numbers):
     return sum(numbers)/len(numbers)
 
-
-print (sum(Lengths))
 print (avg(Eval))
