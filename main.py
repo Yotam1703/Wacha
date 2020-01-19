@@ -125,6 +125,39 @@ Sentence28 = "הסחר שהיקפו עומד על יותר מחמש מאות ט�
 RealSentencePerf28 = [False,False,True,False,True,True,False,False,True,False,False,True,True,False,False,True,True,True,False,True,True,True,True,False,True]
 
 
+def avg(numbers):
+    return sum(numbers)/len(numbers)
+
+Eval1 = Eval(Sentence1, RealSentencePerf1)
+Eval2 = Eval(Sentence2, RealSentencePerf2)
+Eval3 = Eval(Sentence3, RealSentencePerf3)
+Eval4 = Eval(Sentence4, RealSentencePerf4)
+Eval5 = Eval(Sentence5, RealSentencePerf5)
+Eval6 = Eval(Sentence6, RealSentencePerf6)
+Eval7 = Eval(Sentence7, RealSentencePerf7)
+Eval8 = Eval(Sentence8, RealSentencePerf8)
+Eval9 = Eval(Sentence9, RealSentencePerf9)
+Eval10 = Eval(Sentence10, RealSentencePerf10)
+Eval11 = Eval(Sentence11, RealSentencePerf11)
+Eval12 = Eval(Sentence12, RealSentencePerf12)
+Eval13 = Eval(Sentence13, RealSentencePerf13)
+Eval14 = Eval(Sentence14, RealSentencePerf14)
+Eval15 = Eval(Sentence15, RealSentencePerf15)
+Eval16 = Eval(Sentence16, RealSentencePerf16)
+Eval17 = Eval(Sentence17, RealSentencePerf17)
+Eval18 = Eval(Sentence18, RealSentencePerf18)
+Eval19 = Eval(Sentence19, RealSentencePerf19)
+Eval20 = Eval(Sentence20, RealSentencePerf20)
+Eval21 = Eval(Sentence21, RealSentencePerf21)
+Eval22 = Eval(Sentence22, RealSentencePerf22)
+Eval23 = Eval(Sentence23, RealSentencePerf23)
+Eval24 = Eval(Sentence24, RealSentencePerf24)
+Eval25 = Eval(Sentence25, RealSentencePerf25)
+Eval26 = Eval(Sentence26, RealSentencePerf26)
+Eval27 = Eval(Sentence27, RealSentencePerf27)
+Eval28 = Eval(Sentence28, RealSentencePerf28)
+Evaluations = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12,Eval13,Eval14,Eval15,Eval16,Eval17,Eval18,Eval19,Eval20,Eval21,Eval22,Eval23,Eval24,Eval25,Eval26,Eval27,Eval28]
+
 BigSentence = [Sentence2,Sentence3,Sentence4,Sentence5,Sentence6,Sentence7,Sentence8,Sentence9,Sentence10,Sentence11,Sentence12,Sentence13,Sentence14,Sentence15,Sentence16,Sentence17,Sentence18,Sentence19,Sentence20,Sentence21,Sentence22,Sentence23,Sentence24,Sentence25,Sentence26,Sentence27,Sentence28]
 BigRealSentencePerf = [RealSentencePerf2,RealSentencePerf3,RealSentencePerf4,RealSentencePerf5,RealSentencePerf6,RealSentencePerf7,RealSentencePerf8,RealSentencePerf9,RealSentencePerf10,RealSentencePerf11,RealSentencePerf12,RealSentencePerf13,RealSentencePerf14,RealSentencePerf15,RealSentencePerf16,RealSentencePerf17,RealSentencePerf18,RealSentencePerf19,RealSentencePerf20,RealSentencePerf21,RealSentencePerf22,RealSentencePerf23,RealSentencePerf24,RealSentencePerf25,RealSentencePerf26,RealSentencePerf27,RealSentencePerf28]
 CutSentenceCorpus = Sentence1
