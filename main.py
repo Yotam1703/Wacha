@@ -41,7 +41,7 @@ Sentence1 = "בעיני רבים ההגדרה של החופשה המושלמת �
 RealSentencePerf1 = [True,True,False,True,False,True,True,False,False,False,False,False]
 Sentence2 = "המרכיבים ההכרחיים הם חול בין אצבעות הרגליים שמש מלטפת המיית הגלים ואוויר של ים"
 RealSentencePerf2 = [True,False,True,True,True,False,True,True,False,False,False,False,True,False]
-Sentence3 = "אבל מהו בעצם אוויר של ים איך הוא מקבל את הניחוח הייחודי שלו והאם כדאי לנו לדעת מה אנחנו מכניסים לריאות כשאנחנו לוקחים נשימה עמוקה על החוף"
+Sentence3 = "אבל מהו בעצם אוויר של ים איך הוא מקבל את הניחוח הייחודי שלו והאם בכלל כדאי לנו לדעת מה אנחנו מכניסים לריאות כשאנו לוקחים נשימה עמוקה על החוף"
 RealSentencePerf3 = [True,False,True,False,True,False,False,True,True,True,False,True,True,True,True,True,True,True,False,False,True,False,False,False,False,False,True,False]
 Sentence4 = "כשמבקשים מאנשים לתאר את ריחו של הים התשובות הנפוצות כוללות בדרך כלל את המושגים רענן טרי מלוח או דגי בווריאציות שונות"
 RealSentencePerf4 = [True,False,False,True,False,True,False,False,True,False,True,True,True,True,True,False,True,False,True,False,True,]
@@ -92,7 +92,7 @@ RealSentencePerf25 = [False,True,False,True,False,False,False,True,False,True,Fa
 ##איך הכחדנו את הממותות... שוב
 Sentence26 = "בערבות סיביר פורחת בשנים האחרונות תעשייה יוצאת דופן באופייה"
 RealSentencePerf26 = [True,False,True,False,True,False,True,False,False]
-Sentence27 = "חטים קדומים של ממותות ששרידים רבים מהן השתמו בקרקעות הקפואות נחפרים בהמוניהם מתוך האדמה כדי לענות על הביקוש הרב לשנהב בסין שם תכשיטים וחפצי אומנותג מגולפים משנהב הפכו סמל סטטוס לעשירים"
+Sentence27 = "חטים קדומים של ממותות ששרידים רבים מהן השתמרו בקרקעות הקפואות נחפרים בהמוניהם מתוך האדמה כדי לענות על הביקוש הרב לשנהב בסין שם תכשיטים וחפצי אומנות מגולפים משנהב הפכו סמל סטטוס לעשירים"
 RealSentencePerf27 = [False,True,True,False,False,True,True,False,False,False,False,False,True,False,True,True,True,False,True,False,False,True,False,True,True,True,False,False,True,False,True]
 Sentence28 = "הסחר שהיקפו עומד על יותר מחמש מאות טונות בשנה מתנהל ברובו הרחק מעיני הרשויות והחוק ועוזר לפרנס את תושביו של אחד האזורים העניים ביותר ברוסיה"
 RealSentencePerf28 = [False,False,True,False,True,True,False,False,True,False,False,True,True,False,False,True,True,True,False,True,True,True,True,False,True]
@@ -131,5 +131,18 @@ Eval27 = Eval(Sentence27, RealSentencePerf27)
 Eval28 = Eval(Sentence28, RealSentencePerf28)
 Evaluations = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval11,Eval12,Eval13,Eval14,Eval15,Eval16,Eval17,Eval18,Eval19,Eval20,Eval21,Eval22,Eval23,Eval24,Eval25,Eval26,Eval27,Eval28]
 
-BigSentence = [Sentence2,Sentence3,Sentence4,Sentence5,Sentence6,Sentence7,Sentence8,Sentence9,Sentence10,Sentence11,Sentence12,Sentence13,Sentence14,Sentence15,Sentence16,Sentence17,Sentence18,Sentence19,Sentence20,Sentence21,Sentence22,Sentence23,Sentence24,Sentence25,Sentence26,Sentence27,Sentence28]
-BigRealSentencePerf = [RealSentencePerf2,RealSentencePerf3,RealSentencePerf4,RealSentencePerf5,RealSentencePerf6,RealSentencePerf7,RealSentencePerf8,RealSentencePerf9,RealSentencePerf10,RealSentencePerf11,RealSentencePerf12,RealSentencePerf13,RealSentencePerf14,RealSentencePerf15,RealSentencePerf16,RealSentencePerf17,RealSentencePerf18,RealSentencePerf19,RealSentencePerf20,RealSentencePerf21,RealSentencePerf22,RealSentencePerf23,RealSentencePerf24,RealSentencePerf25,RealSentencePerf26,RealSentencePerf27,RealSentencePerf28]
+BigSentence = [Sentence1,Sentence2,Sentence3,Sentence4,Sentence5,Sentence6,Sentence7,Sentence8,Sentence9,Sentence10,Sentence11,Sentence12,Sentence13,Sentence14,Sentence15,Sentence16,Sentence17,Sentence18,Sentence19,Sentence20,Sentence21,Sentence22,Sentence23,Sentence24,Sentence25,Sentence26,Sentence27,Sentence28]
+BigRealSentencePerf = [RealSentencePerf1,RealSentencePerf2,RealSentencePerf3,RealSentencePerf4,RealSentencePerf5,RealSentencePerf6,RealSentencePerf7,RealSentencePerf8,RealSentencePerf9,RealSentencePerf10,RealSentencePerf11,RealSentencePerf12,RealSentencePerf13,RealSentencePerf14,RealSentencePerf15,RealSentencePerf16,RealSentencePerf17,RealSentencePerf18,RealSentencePerf19,RealSentencePerf20,RealSentencePerf21,RealSentencePerf22,RealSentencePerf23,RealSentencePerf24,RealSentencePerf25,RealSentencePerf26,RealSentencePerf27,RealSentencePerf28]
+
+TFListList = []
+for sent in BigSentence:
+    TFListList += [SentPerf(sent)]
+lennTFLIST = 0
+for TFList in TFListList:
+    for TF in TFList:
+        if TF:
+            print(1)
+        else:
+            print(0)
+
+    
