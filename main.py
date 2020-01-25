@@ -1,54 +1,27 @@
-#WrdPerf returns True if the word is ambiguous (==Satisfies at least one criterion), False otherwise.
-##SentPerf returns a list of True and False, evalutaing WrdPerf on each word.
-##Eval compares SentPerf and the actual, provided evaluation, returning the percentage of successfull evaluations.
-
-
 def WrdPerf(word,isStart,isEnd): 
                 CritFilled = 0
-                #if isStart: ##word is in head of sentence
-                #                CritFilled += 1
-                #if isEnd:
-                #                 CritFilled += 1
+                if isStart:
+                    CritFilled += 1
+                if isEnd:
+                    CritFilled += 1
                 if len(word) <= 4: 
-                                  CritFilled += 1
-                # if len(word) >= 6: 
-                #                 CritFilled -= 1              
-                # if word.endswith("ים"): 
-                #                 CritFilled += 1
-                # if word.endswith("ות"): 
-                #                 CritFilled += 1
-                # if word[0] == "ה":
-                #             CritFilled -= 1 
-                # if word[0] == "ב":
-                #               CritFilled -= 1
-                # if word[0] == "מ":
-                #               CritFilled += 1
-                # if word[0] == "ל":
-                #               CritFilled -= 1
-                # if word[0] == "כ":
-                #               CritFilled += 1                                   
-                # if word[0] == "ו":
-                #               CritFilled -= 1
-                # if word[0] == "ש":
-                #               CritFilled += 1
-                #if len(word) == 2: 
-                #                CritFilled += 1
-                #if len(word) == 3: 
-                #                CritFilled += 1
-                #if len(word) == 4: 
-                #                CritFilled += 1
-                #if len(word) == 5: 
-                #                CritFilled += 1                
-                # if word[0] == "ע":
-                #               CritFilled += 1  
-                
-                
-                IsAmb = CritFilled >= 1 ##One criterion filled is enough (???)
+                    CritFilled += 1
+                if word[0] == "ב":
+                    CritFilled -= 1
+                if word[0] == "ל":
+                    CritFilled -= 1
+                if word[0] == "ע":
+                    CritFilled += 1  
+                if word.endswith("י"):
+                    CritFilled += 1
+                if word.endswith("א"):
+                    CritFilled -= 1
+                IsAmb = CritFilled >= 1
                 return IsAmb
 
 def SentPerf(sentence):
-    AreAmb = [] ##True/False list for the sentence
-    SplitSentence = sentence.split(" ") ##turns the sentence to a list
+    AreAmb = []
+    SplitSentence = sentence.split(" ")
     for word in SplitSentence:
         IsStart = word == SplitSentence[0]
         IsEnd = word == SplitSentence[-1]
@@ -58,8 +31,8 @@ def SentPerf(sentence):
 def Eval(sentence,RealSentPerf):
     SuccessfullEvals = 0 
     SentencePerformance = SentPerf(sentence) 
-    for i in range(len(SentencePerformance)): ##at every index...
-        if SentencePerformance[i] == RealSentPerf[i]: ##...compare the evaluation and the actual evaluation
+    for i in range(len(SentencePerformance)):
+        if SentencePerformance[i] == RealSentPerf[i]:
             SuccessfullEvals += 1 
     return 100*SuccessfullEvals/len(SentencePerformance) 
 
@@ -160,13 +133,3 @@ Evaluations = [Eval1,Eval2,Eval3,Eval4,Eval5,Eval6,Eval7,Eval8,Eval9,Eval10,Eval
 
 BigSentence = [Sentence2,Sentence3,Sentence4,Sentence5,Sentence6,Sentence7,Sentence8,Sentence9,Sentence10,Sentence11,Sentence12,Sentence13,Sentence14,Sentence15,Sentence16,Sentence17,Sentence18,Sentence19,Sentence20,Sentence21,Sentence22,Sentence23,Sentence24,Sentence25,Sentence26,Sentence27,Sentence28]
 BigRealSentencePerf = [RealSentencePerf2,RealSentencePerf3,RealSentencePerf4,RealSentencePerf5,RealSentencePerf6,RealSentencePerf7,RealSentencePerf8,RealSentencePerf9,RealSentencePerf10,RealSentencePerf11,RealSentencePerf12,RealSentencePerf13,RealSentencePerf14,RealSentencePerf15,RealSentencePerf16,RealSentencePerf17,RealSentencePerf18,RealSentencePerf19,RealSentencePerf20,RealSentencePerf21,RealSentencePerf22,RealSentencePerf23,RealSentencePerf24,RealSentencePerf25,RealSentencePerf26,RealSentencePerf27,RealSentencePerf28]
-CutSentenceCorpus = Sentence1
-CutRealSentencePerfCorpus = RealSentencePerf1
-
-print(Eval(CutSentenceCorpus, CutRealSentencePerfCorpus))
-for i in range(27):
-    CutSentenceCorpus += " " + BigSentence[i]
-    CutRealSentencePerfCorpus += BigRealSentencePerf[i]
-    # print (CutSentenceCorpus)
-    print(Eval(CutSentenceCorpus, CutRealSentencePerfCorpus))
-# print (CutSentenceCorpus.split(" "))
